@@ -1,67 +1,73 @@
-[English](https://github.com/ic005k/QtOpenCoreConfig/blob/master/READMe.md) | [简体中文](https://github.com/ic005k/QtOpenCoreConfig/blob/master/READMe-en.md)
-# Open source cross-platform OpenCore auxiliary tools
+
+# OpenCore Auxiliary Tools (OCAT)
+
+![GUI](https://user-images.githubusercontent.com/76865553/165901706-abbccb4a-89bc-4b03-b6e5-f52dcb10b53c.png)
+
+## About
+OpenCore Auxiliary Tools is a GUI-based Configurator for editing `config.plist` files for Acidanthera's OpenCore Boot Manager.
+
+Unlike other Configurator apps, OCAT doesn't mess up the config if the Devs of OpenCore add new features/keys to the config file structure. Instead, it adapts and integrates them in the interface automatically.
+
+## Features
+
+Besides beeing a plist Configurator it can do much more:
+
+* Mount the EFI partion and automatically open the config.plist
+* Update and migrate configs to the latest specs simply by clicking on the "Save" button. No more copying of keys and manually validtaing the config is required (huge timesaver).
+* Automatically performs config validatation and points to possible conflicts/configuration issues.
+* Sync Feature: check for and apply updates for OpenCore, Resources and Kext with a few clicks
+* Select between Official/Dev Release and Debug builds of OpenCore
+* Dropdown Menus with suggested Quirks for Intel and AMD CPUs
+* Preset Menus for ACPI, Kernel and other lists.
+* Editable list with URLs of Kext Repos
+* Integrated ASCII < > HEX Converter 
+* Database with complete base configs for Intel and AMD CPUs based on Dortania's OpenCore Install Guide
+* Ability to generate EFI folders from a config with a single click
+* Ability to Create EFI folder Backups
+
+## Guides
+
+* [Updating OpenCore and Kexts with OCAT (by 5T33Z0)](https://github.com/5T33Z0/OC-Little-Translated/blob/main/D_Updating_OpenCore/README.md)
+* Pre-selected plug-in content for Intel CPU Quirks is provided and maintained by 5T33Z0. [Details](https://github.com/5T33Z0/OC-Little-Translated/tree/main/F_Desktop_EFIs/preset)
+* Intel CPU BaseConfigs plug-in package provided and maintained by 5T33Z0. [Details](https://github.com/5T33Z0/OC-Little-Translated/tree/main/F_Desktop_EFIs)
+* [OpenCore Auxiliary Tools User's Guide (by chriswayg)](https://chriswayg.gitbook.io/opencore-visual-beginners-guide/oc_auxiliary_tools)
 
 
-| [Release][release-link]|[Download][download-link]|[Issues][issues-link]|[Discourse][discourse-link]|
-|-----------------|-----------------|-----------------|-----------------|
-|[![release-badge](https://img.shields.io/github/release/ic005k/QtOpenCoreConfig.svg?style=flat-square "Release status")](https://github.com/ic005k/QtOpenCoreConfig/releases "Release status") | [![download-badge](https://img.shields.io/github/downloads/ic005k/QtOpenCoreConfig/total.svg?style=flat-square "Download status")](https://github.com/ic005k/QtOpenCoreConfig/releases/latest "Download status")|[![issues-badge](https://img.shields.io/badge/github-issues-red.svg?maxAge=60 "Issues")](https://github.com/ic005k/QtOpenCoreConfig/issues "Issues")|[![discourse](https://img.shields.io/badge/forum-discourse-orange.svg)](https://www.insanelymac.com/forum/topic/344752-open-source-cross-platform-opencore-auxiliary-tools/)|
+## About adapt OpenCore version  （关于OCAT支持的OpenCore版本的问题）
+[#311](https://github.com/ic005k/OCAuxiliaryTools/issues/311) [#361](https://github.com/ic005k/OCAuxiliaryTools/issues/361)
 
-[![Windows](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/windows.yml/badge.svg)](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/windows.yml)      [![MacOS](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/macos.yml/badge.svg)](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/macos.yml)       [![MacOS Classical](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/macos1012.yml/badge.svg)](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/macos1012.yml)  [![Ubuntu](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/ic005k/QtOpenCoreConfig/actions/workflows/ubuntu.yml)    
+OCAT is Smart adapt to openCore version,if you need update  openCore version，you can get new OpenCore like this 
+（OCAT 是智能适应OC的新版本的，如果你需要更新OC版本,你可以按照下图操作）
 
-[download-link]: https://github.com/ic005k/QtOpenCoreConfig/releases/latest "Download status"
-[download-badge]: https://img.shields.io/github/downloads/ic005k/QtOpenCoreConfig/total.svg?style=flat-square "Download status"
+First,  click this button （第一步，点击这个按钮）
+![image](https://github.com/ic005k/OCAuxiliaryTools/assets/7905253/b4c94679-cd8c-4243-a85f-c70c1c304665)
 
-[release-link]: https://github.com/ic005k/QtOpenCoreConfig/releases "Release status"
-[release-badge]: https://img.shields.io/github/release/ic005k/QtOpenCoreConfig.svg?style=flat-square "Release status"
+Second, select the latest version or the other version from the drop-down list（第二步，在下拉列表里选择最新的版本或者其他的OC版本）
 
-[issues-link]: https://github.com/ic005k/QtOpenCoreConfig/issues "Issues"
-[issues-badge]: https://img.shields.io/badge/github-issues-red.svg?maxAge=60 "Issues"
+![image](https://github.com/ic005k/OCAuxiliaryTools/assets/7905253/240a7831-fcb5-411e-842d-bffd22cc2982)
 
-[discourse-link]: https://www.insanelymac.com/forum/topic/344752-open-source-cross-platform-opencore-auxiliary-tools/
-
+Third, click to get the latest version, or get the OC version of your choice（第三步，点击获取最新版，或者获取你选择的OC版本）
+![image](https://github.com/ic005k/OCAuxiliaryTools/assets/7905253/e3331a23-4744-4075-b820-e58878c36dc8)
 
 
-OC auxiliary tools（OCAT or ocat for short） = Config.plist editor + Config.plist database + ...
-
-OC development version can be downloaded [here](https://github.com/acidanthera/OpenCorePkg/actions).
-
-[0.7.3](https://github.com/ic005k/QtOpenCoreConfig/releases/tag/20210919) |
-[0.7.2](https://github.com/ic005k/QtOpenCoreConfig/releases/tag/20210828) |
-[0.7.1](https://github.com/ic005k/QtOpenCoreConfig/releases/tag/20210715) |
-[0.7.0](https://github.com/ic005k/QtOpenCoreConfig/releases/tag/20210608) 
-
-## The feature is shown in the screenshot below above
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat1.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat2.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat3.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat4.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat5.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat6.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat7.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat8.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat9.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat10.png)
-
-![Screenshots](https://github.com/ic005k/QtOpenCoreConfig/blob/master/Screenshots/ocat11.png)
-
-### Thanks for the support of the following open source software!
-
-[OpenCore](https://github.com/acidanthera/OpenCorePkg)&nbsp; &nbsp; &nbsp; &nbsp;
+## Credits
+* [vit9696](https://github.com/vit9696) OCAT feature suggestions etc.
+* [5T33Z0](https://github.com/5T33Z0) Intel CPU plug-in package for OCAT, suggestions for user interaction and functionality, Write Readme, etc.
+* [LucasMucGH](https://github.com/LucasMucGH) Native UI design suggestions for Mac-based versions, etc.
+* [chriswayg](https://github.com/chriswayg) OpenCore Auxiliary Tools User's Guide.
+* APP Icon Design: Mirone (Brazil).
+* [OpenCore](https://github.com/acidanthera/OpenCorePkg)&nbsp; &nbsp; &nbsp; &nbsp;
 [qtplist](https://github.com/reillywatson/qtplist)&nbsp; &nbsp; &nbsp; &nbsp;
 [FindESP](https://github.com/bluer007/FindESP)&nbsp; &nbsp; &nbsp; &nbsp;
 [winfile](https://github.com/microsoft/winfile)&nbsp; &nbsp; &nbsp; &nbsp;
 [PlistCpp](https://github.com/animetrics/PlistCpp)&nbsp; &nbsp; &nbsp; &nbsp;
-[pugixml](https://github.com/zeux/pugixml)&nbsp;
+[pugixml](https://github.com/zeux/pugixml)&nbsp;&nbsp; &nbsp; &nbsp;
+[aria2](https://github.com/aria2/aria2)&nbsp; &nbsp; &nbsp;&nbsp;
+[wget](http://wget.addictivecode.org/)&nbsp; &nbsp; &nbsp;&nbsp;
+[DirectionalToolTip](https://github.com/scondratev/DirectionalToolTip)&nbsp; &nbsp; &nbsp;&nbsp;
+[dortania build-repo](https://github.com/dortania/build-repo)&nbsp; &nbsp; &nbsp;&nbsp;
+[HackinPlugins](https://github.com/bugprogrammer/HackinPlugins)&nbsp; &nbsp; &nbsp;&nbsp;
 
+---
 
-### Note: This project started in August 2020
+API: https://api.github.com/repos/ic005k/OCAuxiliaryTools/releases/latest
